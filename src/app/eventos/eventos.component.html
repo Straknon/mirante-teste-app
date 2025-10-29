@@ -30,32 +30,32 @@
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
     <ng-container matColumnDef="id">
-        <th mat-header-cell *matHeaderCellDef> Id </th>
+        <th mat-header-cell *matHeaderCellDef (click)="filterBycolumn('id')" class="header-class" > Id </th>
         <td mat-cell *matCellDef="let evento"> {{evento.id}} </td>
     </ng-container>
 
     <ng-container matColumnDef="titulo">
-        <th mat-header-cell *matHeaderCellDef> Titulo </th>
+        <th mat-header-cell *matHeaderCellDef (click)="filterBycolumn('titulo')" class="header-class"> Titulo </th>
         <td mat-cell *matCellDef="let evento"> {{evento.titulo}} </td>
     </ng-container>
 
     <ng-container matColumnDef="local">
-        <th mat-header-cell *matHeaderCellDef> Local </th>
+        <th mat-header-cell *matHeaderCellDef (click)="filterBycolumn('local')" class="header-class"> Local </th>
         <td mat-cell *matCellDef="let evento"> {{evento.local}} </td>
     </ng-container>
 
     <ng-container matColumnDef="descricao">
-        <th mat-header-cell *matHeaderCellDef> Descricao </th>
+        <th mat-header-cell *matHeaderCellDef (click)="filterBycolumn('descricao')" class="header-class"> Descricao </th>
         <td mat-cell *matCellDef="let evento"> {{evento.descricao}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="createdAt">
-        <th mat-header-cell *matHeaderCellDef> Data de Criação </th>
+    <ng-container matColumnDef="createdAt" >
+        <th mat-header-cell *matHeaderCellDef (click)="filterBycolumn('createdAt')" class="header-class"> Data de Criação </th>
         <td mat-cell *matCellDef="let evento"> {{this.formatarData(evento.createdAt)}} </td>
     </ng-container>
 
-    <ng-container matColumnDef="updatedAt">
-        <th mat-header-cell *matHeaderCellDef> Data de Atualização </th>
+    <ng-container matColumnDef="updatedAt" >
+        <th mat-header-cell *matHeaderCellDef (click)="filterBycolumn('updatedAt')" class="header-class"> Data de Atualização </th>
         <td mat-cell *matCellDef="let evento"> {{this.formatarData(evento.updatedAt)}} </td>
     </ng-container>
 
