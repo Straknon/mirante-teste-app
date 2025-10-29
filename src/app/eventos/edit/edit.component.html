@@ -1,0 +1,56 @@
+<div style="justify-content: center; display: flex;">
+    <h1 class="mat-h1">Editar evento</h1>
+</div>
+<div class="spinner-class" *ngIf="carregando">
+
+    <mat-progress-spinner 
+        mode="indeterminate"
+        value="true">
+    </mat-progress-spinner>
+
+</div>
+<mat-divider></mat-divider>
+<div class="form-wrapper">
+    <form [formGroup]="form" (ngSubmit)="onSubmit()" class="form-container">
+        <mat-form-field appearance="fill">
+            <mat-label>Título</mat-label>
+            <input matInput formControlName="titulo" required />
+            <mat-error *ngIf="form.get('titulo')?.hasError('required')">
+                Título é obrigatório
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Descrição</mat-label>
+            <textarea matInput formControlName="descricao" required></textarea>
+            <mat-error *ngIf="form.get('descricao')?.hasError('required')">
+                Descrição é obrigatória
+            </mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="fill">
+            <mat-label>Local</mat-label>
+            <input matInput formControlName="local" required />
+            <mat-error *ngIf="form.get('local')?.hasError('required')">
+                Local é obrigatório
+            </mat-error>
+        </mat-form-field>
+
+
+        <div class="info-block">
+            <strong>ID:</strong> {{ form.get('id')?.value }}
+        </div>
+
+        <div class="info-block">
+            <strong>Criado em:</strong> {{ this.formatarData(form.get('createdAt')?.value) }}
+        </div>
+
+        <div class="info-block">
+            <strong>Atualizado em:</strong> {{ this.formatarData(form.get('updatedAt')?.value) }}
+        </div>
+
+        <mat-checkbox formControlName="deleted">Deletado</mat-checkbox>
+
+        <button mat-raised-button [disabled]="disableButton()" color="primary" type="submit">Salvar</button>
+    </form>
+</div>

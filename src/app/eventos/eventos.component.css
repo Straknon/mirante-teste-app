@@ -1,0 +1,37 @@
+.larger-button {
+    margin: 20px;
+    width: 100px;
+    box-shadow: none !important;
+    border: none;
+  }
+
+  .small-button {
+    width: 10px;
+    margin: 4px;
+  }
+
+  .right-button {
+    margin-left: auto;
+  }
+  
+  .button-group {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .spinner-class {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1000;
+  }

@@ -1,0 +1,34 @@
+<div style="justify-content: center; display: flex;">
+    <h1 class="mat-h1">Visualizar evento</h1>
+</div>
+<div class="spinner-class" *ngIf="carregando">
+
+    <mat-progress-spinner 
+        mode="indeterminate"
+        value="true">
+    </mat-progress-spinner>
+
+</div>
+<mat-divider></mat-divider>
+<div class="form-wrapper">
+    <form class="form-container">
+        <div class="info-block">
+            <strong>ID:</strong> {{ id }}
+        </div>
+        <div class="info-block">
+            <strong>Criado em:</strong> {{this.formatarData(createdAt)}}
+        </div>
+        <div class="info-block">
+            <strong>Atualizado em:</strong> {{ this.formatarData(updatedAt) }}
+        </div>
+        <div class="info-block">
+            <strong>Título:</strong> {{ titulo }}
+        </div>
+        <div class="info-block">
+            <strong>Descrição:</strong> {{ descricao }}
+        </div>
+        <div class="info-block">
+            <strong>Local:</strong> {{ local }}
+        </div>
+    </form>
+</div>

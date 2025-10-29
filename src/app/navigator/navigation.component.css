@@ -1,0 +1,48 @@
+/* Container ocupa toda a tela */
+.layout-container {
+    height: 100vh;
+  }
+  
+  /* Menu lateral fixo com fundo azul claro */
+  .side-menu {
+    width: 220px;
+    background-color: white; 
+    border-right: 1px solid #bbdefb;
+  }
+  
+  /* Conteúdo principal */
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background-color: #fafafa;
+  }
+  
+  /* Margem interna do conteúdo */
+  .page-content {
+    padding: 1.5rem;
+  }
+  
+  /* Item ativo destacado */
+  a.active {
+    background-color: #bbdefb;
+    font-weight: 600;
+  }
+
+  /* Remove bordas arredondadas dos itens do menu */
+.mat-mdc-list-item {
+  border-radius: 0 !important;
+}
+
+/* Remove o efeito arredondado de hover também */
+.mat-mdc-list-item:hover {
+  border-radius: 0 !important;
+}
+
+/* Conteúdo principal */
+.main-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: #fafafa;
+}

@@ -1,0 +1,33 @@
+:host {
+    display: block;
+    height: 100vh;
+  }
+  
+  .home-card {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    box-shadow: none;
+    background: transparent;
+  }
+  
+  .home-text {
+    font-size: 2.2rem;
+    font-weight: 500;
+    text-transform: lowercase;
+    text-align: center;
+  }
+
+  mat-sidenav-container{
+    height: 100%;
+  }
+
+  mat-sidenav, mat-sidenav-content{
+    padding: 16px;
+  }
+
+  mat-sidenav{
+    background-color: cornflowerblue;
+    width: 200px;
+  }
