@@ -42,9 +42,11 @@ export class EventosComponent {
   pageNumber: number = 0;
   totalItems: number = 0;
   pageSize: number = 5;
+  sortBy: string = 'id';
 
   firstSearch = false;
   carregando = false;
+  sortAsc = true;
 
   constructor(private fb: FormBuilder, private service: AppService, private router: Router, private dialog: MatDialog) { }
 
@@ -116,7 +118,7 @@ export class EventosComponent {
 
   loadData(){
     this.carregando = true; // carregando
-    this.service.getAll(this.pageNumber, this.pageSize, 'id', 'asc', false).subscribe(
+    this.service.getAll(this.pageNumber, this.pageSize, this.sortBy, this.getDirection(), false).subscribe(
       (valor) =>{
         this.eventos = valor.content;
         this.totalItems = valor.totalElements;
@@ -137,6 +139,16 @@ export class EventosComponent {
         });
       }
     );
+  }
+
+  filterBycolumn(name: string){
+    this.sortAsc = !this.sortAsc;
+    this.sortBy = name;
+    this.loadData();
+  }
+
+  getDirection(): string{
+    return this.sortAsc === true ? 'asc' : 'desc';
   }
 
   edit(id: number){
